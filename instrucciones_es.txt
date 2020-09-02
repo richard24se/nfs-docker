@@ -1,0 +1,12 @@
+#Se debe detener los servicios que también utilizan los puertos del NFS localmente
+sudo systemctl stop rpcbind
+sudo systemctl stop rpcbind.socket
+sudo systemctl stop nfs-server
+sudo systemctl stop nfs-lock
+sudo systemctl stop nfs-idmap
+#Adicional a esto se debe deshabilitar los servicios del NFS localmente
+sudo systemctl disable rpcbind
+sudo systemctl disable rpcbind.socket
+sudo systemctl disable nfs-server
+sudo systemctl disable nfs-lock
+sudo systemctl disable nfs-idmap
